@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block icon %}
+<link rel="shortcut icon" href={{icon}} type="image/x-icon">
+{% endblock %}
+{% block title %}
+<title>{{title}}</title>
+{% endblock %}
+
+{% block body %}
+{% block wow %}
+{% for d in data -%}
+<div class="bigcar card">
+		<div class="card-body">
+			<h4 class="card-title">{{d[1]}}</h4>
+            <img class="bc-just" src="{{d[3]}}">
+			<p class="card-text">Designed by: {{d[2]}}</p>
+            <p class="card-text">Color: {{d[4]}}</p>
+            <p class="card-text">Size: {{d[5]}}</p>
+            <p class="card-text">Difficulty: {{d[6]}}</p>
+            <p class="card-text">Video tutorial: <a href="{{d[7]}}" target="_blank">{{d[7]}}</a></p>
+            <p class="card-text">Diagram link: <a href="{{d[8]}}" target="_blank">{{d[8]}}</a></p>
+            <p class="card-text">Crease pattern: <a href="{{d[10]}}" target="_blank">{{d[10]}}</a></p>
+            <p class="card-text">Comment: {{d[9]}}</p>
+			<a href="/"><button class="fb">Go back</button></a>
+		</div>
+</div>
+{% endfor -%}
+{% endblock %}
+{% endblock %}

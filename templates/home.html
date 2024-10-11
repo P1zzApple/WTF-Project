@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block icon %}
+<link rel="shortcut icon" href={{icon}} type="image/x-icon">
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/action.js') }}"></script>
+{% endblock %}
+{% block title %}
+<title>{{title}}</title>
+{% endblock %}
+
+{% block fishka %}
+<a href="/model/{{ran}}"><button class="random">Random🎲</button></a>
+{% endblock %}
+
+{% block body %}
+	{%- block cards -%}
+	{% for d in data -%}
+	<!-- {{d[1]}} card -->
+	<div class="card car to-left">
+		<div class="card-body">
+			<h4 class="card-title">{{d[1]}}</h4>
+			<img id="Pic" src="{{d[3]}}" width="316px" height="220px" alt="{{d[1]}}">
+			<div class="loader"></div>
+			<p class="card-text">Author: {{d[2]}}</p>
+			<a href="/model/{{d[0]}}">
+				<button class="fb zmore">More info</button>
+			</a>
+		</div>
+	</div>
+	{% endfor -%}
+	{%endblock cards -%}
+{% endblock %}
